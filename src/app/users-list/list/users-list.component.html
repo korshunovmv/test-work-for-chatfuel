@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <form class="form-add-user" [formGroup]="addUserForm">
+    <mat-form-field
+      class="username-new-user"
+      [hideRequiredMarker]="options.value.hideRequired"
+      [floatLabel]="options.value.floatLabel">
+      <input matInput placeholder="User name for new user" [formControl]="addUserForm?.controls?.name">
+    </mat-form-field>
+    <button class="button-add-user" mat-raised-button color="primary" [disabled]="!addUserForm.valid" (click)="addNewUser()">Add</button>
+  </form>
+  <div class="wrapper-list">
+    <user-item *ngFor="let user of users" class="item" [user]="user"></user-item>
+  </div>
+</div>

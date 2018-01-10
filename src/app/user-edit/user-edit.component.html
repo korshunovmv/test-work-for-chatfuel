@@ -1,0 +1,20 @@
+<div class="button-back">
+  <button mat-raised-button color="primary" (click)="backToList()">Back to list</button>
+</div>
+<div class="wrapper">
+  <form class="form-update-user" [formGroup]="userForm">
+    <div class="form-controls">
+      <avatar [user]="user"></avatar>
+      <mat-form-field
+        class="username"
+        [hideRequiredMarker]="options.value.hideRequired"
+        [floatLabel]="options.value.floatLabel">
+        <input matInput placeholder="User name" [formControl]="userForm?.controls?.name" required>
+        <mat-error *ngIf="userForm?.controls?.name.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="button-update-user">
+        <button mat-raised-button color="primary" [disabled]="!userForm.valid || !userUpdated" (click)="updateUser()">Update</button>
+    </div>
+  </form>
+</div>

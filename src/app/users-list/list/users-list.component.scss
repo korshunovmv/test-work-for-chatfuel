@@ -1,0 +1,54 @@
+@import '../../../styles/_variables.scss';
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper-list {
+  overflow: auto;
+  width: 30em;
+  height: 40em;
+  border: 1px solid #ddd;
+  padding: 1em;
+}
+
+.item {
+  padding: 0.2em 0;
+  cursor: pointer;
+  word-break: break-all;
+  
+  label {
+    padding-left: 0.3em;
+  }
+}
+
+.item:hover {
+  background-color: #DCDCDC;
+}
+
+.item.selected {
+  background-color: #A9A9A9;
+}
+
+.form-add-user {
+  display: flex;
+  align-items: baseline;
+}
+
+.username-new-user {
+  flex: 1 1;
+  padding-right: 1em;
+}
+
+.button-add-user {
+  flex: 0 0;
+}
